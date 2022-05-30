@@ -12,7 +12,7 @@ router.put("/article", isSignedIn,editAnArticle);
 
 router.delete("/article", isSignedIn, deleteArticle); 
 
-router.post("/task", isSignedIn, async(req, res)=>{
+router.post("/str/task", isSignedIn, async(req, res)=>{
     try {
         const str = await req.body.string; 
   
