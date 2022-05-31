@@ -20,6 +20,8 @@ router.delete("/article", isSignedIn, deleteArticle);
 router.post("/str/task", isSignedIn, async (req, res) => {
   try {
     const str = await req.body.string;
+    if(!str || str.length<2)
+    return res.status(400).json({error:"please provide minimum of two words"}); 
     //removing the spaces
     let strwithoutSpace = str.replace(/ /g, "");
     //sorting the given array
